@@ -1,4 +1,4 @@
-# Search4U
+# Search4U (Niedokończone)
 API created to detect phishing websites
 
 Serwer API, przyjmujący parametr w formacie JSON.
