@@ -1,15 +1,18 @@
 import java.net.*;
 import java.util.*;
-import java.util.stream.Stream;
+import javax.lang.model.*;
 import javax.lang.model.util.Elements;
+import javax.swing.text.Document;
 import java.io.*;
+import org.*;
+import java.net.*;
+import java.util.*;
+import java.io.*;
+import javax.net.ssl.HttpsURLConnection;
 import com.google.gson.Gson;
-import java.io.*;
-import javax.swing.text.*;
-import javax.swing.text.html.*;
-import javax.swing.text.html.parser.*;
-
-
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 
 public class Analiser_NetKnower {
@@ -21,21 +24,8 @@ public class Analiser_NetKnower {
         List<String> out = new ArrayList<String>();
         boolean isOpen= false;
         String segment = "";
-        //System.out.println(content);
-        for(int i=15;i<content.length();i++){
 
-            //System.out.println(content.substring(i-1, i));
-            
-            if(content.charAt(i) == '<' && isOpen){    
-                isOpen=false;
-                if(segment!="")
-                out.add(segment);
-                segment="";
-            }
-            if(isOpen)segment+=content.charAt(i);
-            if(content.charAt(i) == '>')
-            isOpen=true;
-        }
+
         return out;
     }
 
